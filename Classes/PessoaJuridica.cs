@@ -18,11 +18,12 @@ namespace Cadastro_Pessoa_FS1.Classes
 
         public bool ValidarCNPJ(string cnpj)
         {
-            if (Regex.IsMatch(cnpj, @"(^(\.d{2}.\d{3}.\d{3}/\d{4}-\d{2})|(\d{14})$)"))
+            if (Regex.IsMatch(cnpj, @"(^(\d{2}.\d{3}.\d{3}/\d{4}-\d{2})|(\d{14})$)"))
             {
                 if (cnpj.Length == 18)
                 {
-                    if (cnpj.Substring(11, 4) == "0001"){
+                    if (cnpj.Substring(11, 4) == "0001")
+                    {
                         return true;
                     }
                 }
