@@ -9,7 +9,7 @@ namespace Cadastro_Pessoa_FS1.Classes
 
         public Endereco ?endereco { get; set;}
 
-        public float ?rendimento { get; set;}
+        public float rendimento { get; set;}
 
         public abstract float PagarImposto(float rendimento);
     }

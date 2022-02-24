@@ -57,7 +57,9 @@ do
             Console.WriteLine(@$"
             Nome: {novaPf.nome}
             Endereço: {novaPf.endereco.logradouro}, {novaPf.endereco.numero}
-            Maior de Idade: {metodoPf.ValidarDataNasc(novaPf.dataNascimento)}");
+            Maior de Idade: {(metodoPf.ValidarDataNasc(novaPf.dataNascimento) ? "Sim" : "Não")}
+            Taxa de Imposto a Ser Paga é: {metodoPf.PagarImposto(novaPf.rendimento).ToString("C")}
+            ");
 
             Console.WriteLine($"Aperte Enter para Continuar");
             Console.ReadLine();
@@ -83,7 +85,8 @@ do
             Nome: {novaPj.nome}
             Razão Social: {novaPj.razaosocial}
             CNPJ: {novaPj.cnpj}
-            CPNJ Válido: {metodoPj.ValidarCNPJ(novaPj.cnpj)}
+            CPNJ Válido: {(metodoPj.ValidarCNPJ(novaPj.cnpj) ? "Sim" : "Não")}
+            Taxa de Imposto a Ser Paga é: {metodoPj.PagarImposto(novaPj.rendimento).ToString("C")}
             ");
 
             Console.WriteLine($"Aperte Enter para Continuar");
