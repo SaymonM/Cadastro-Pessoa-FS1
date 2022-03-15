@@ -41,10 +41,11 @@ namespace Cadastro_Pessoa_FS1.Classes
             }else if (rendimento > 3500 && rendimento <= 6000)
             {
                 return (rendimento / 100) * 3.5f; 
-                
+
             }else
             {
                 return (rendimento / 100) * 5;
+                
             }
         }
 
