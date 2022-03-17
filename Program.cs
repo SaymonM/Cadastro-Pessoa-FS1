@@ -14,6 +14,12 @@ BarraLoading("CARREGANDO", 500);
 List<PessoaFisica> listaPf = new List<PessoaFisica>();
 List<PessoaJuridica> listaPj = new List<PessoaJuridica>();
 
+
+int ValorA;
+int ValorB;
+
+
+
 string? opcao;
 do
 {
@@ -116,7 +122,17 @@ do
                         
                         novaPf.endereco = novoEnd;
 
-                        listaPf.Add(novaPf);
+                        //listaPf.Add(novaPf);
+
+
+                        //StreamWriter sw = new StreamWriter ($"{novaPf.nome}.txt");
+                        //sw.Write(novaPf.nome);
+                        //sw.Close();
+
+                        using (StreamWriter sw = new StreamWriter ($"{novaPf.nome}.txt"))
+                        {
+                            sw.WriteLine($"{novaPf.nome}{novaPf.endereco.complemento}");
+                        }
 
                         Console.ForegroundColor = ConsoleColor.DarkRed;
                         Console.WriteLine($"Cadastro Concluído!!");
@@ -143,14 +159,26 @@ do
 
                                 Console.WriteLine($"Aperte Enter para Continuar");
                                 Console.ReadLine();
-                            }
-
-
+                            }                         
                         } else
                         {
                             Console.WriteLine($"Lista Vazia!!!!");
                             Thread.Sleep(2000);
                         }
+
+                         
+                        using (StreamReader sr = new StreamReader("testenome.txt"))
+                        {
+                            string linha;
+                            while ((linha = sr.ReadLine()) != null)
+                            {
+                                Console.WriteLine($"{linha}");
+                            }
+
+                        }
+
+                        Console.WriteLine($"Aperte Enter para Continuar");
+                        Console.ReadLine();
 
                         
                     break;
