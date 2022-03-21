@@ -25,17 +25,17 @@ do
 {
 
 
-    Console.Clear();
-    Console.WriteLine(@$"
-=================================
-| ESCOLHA UMA DAS OPÇÕES ABAIXO |
----------------------------------
-|       1 - PF                  |
-|       2 - PJ                  |
-|                               |
-|       0 - SAIR                |             
-=================================
-");
+        Console.Clear();
+        Console.WriteLine(@$"
+    =================================
+    | ESCOLHA UMA DAS OPÇÕES ABAIXO |
+    ---------------------------------
+    |       1 - PF                  |
+    |       2 - PJ                  |
+    |                               |
+    |       0 - SAIR                |             
+    =================================
+    ");
 
     opcao = Console.ReadLine();
 
@@ -200,6 +200,7 @@ do
         case "2":
             
             PessoaJuridica metodoPj = new PessoaJuridica();
+            
 
             string? opcaoPj;
             do
@@ -223,6 +224,7 @@ do
                     case "1":
                         PessoaJuridica novaPj = new PessoaJuridica();
                         Endereco novoEndPj = new Endereco();
+                        metodoPj.Inserir(novaPj);
                         
                         Console.WriteLine($"Digite o NOME da EMPRESA que deseja cadastrar");
                         novaPj.razaosocial = Console.ReadLine();
@@ -272,9 +274,12 @@ do
                     break;
 
                     case "2":
+                        listaPj = metodoPj.Ler();
 
+                        
                         if (listaPj.Count > 0)
                         {
+
                             foreach (PessoaJuridica cadaPJ in listaPj)
                             {
                                 Console.Clear();
@@ -288,7 +293,7 @@ do
                                 Console.WriteLine($"Aperte Enter para Continuar");
                                 Console.ReadLine();
                             }
-
+                            
 
                         } else
                         {
